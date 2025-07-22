@@ -1,0 +1,32 @@
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.link {
+  color: #ca6f20;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.description {
+  margin: 0;
+}
+
+.images {
+  display: flex;
+  gap: 20px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.image {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  max-height: 400px;
+}
+
+.tech {
+  font-family: monospace;
+}

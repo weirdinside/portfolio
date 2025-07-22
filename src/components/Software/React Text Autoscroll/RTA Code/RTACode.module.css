@@ -1,0 +1,137 @@
+.page {
+  border-radius: 10px;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  overflow: visible;
+  position: relative;
+}
+
+.file__option {
+  font-size: 15px;
+  padding: 5px 5px;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.file__option:hover{
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.file__option.active {
+  background-color: white;
+  color: black;
+}
+
+.file__option:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.file__option:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.selector {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 5px);
+}
+
+.codeview {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  justify-content: flex-start;
+  height: 500px;
+  width: calc(100% - 5px);
+  overflow: auto;
+  margin: 0;
+  font-size: 12px;
+}
+
+.copier {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+  border: 2px solid black;
+  border-radius: 5px;
+  background-image: url(/other\ logos/copy-to-clipboard.svg);
+  background-size: contain;
+  background-color: rgb(206, 206, 206);
+  z-index: 20;
+  background-position: center;
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  align-items: center;
+}
+
+.copier:hover {
+  background-color: white;
+  filter: invert(0);
+  opacity: 1;
+  border: 2px solid white;
+}
+
+.copier::before {
+  right: 0px;
+  content: "";
+  z-index: 9;
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.copier:hover::before {
+  content: "copy code?";
+  position: absolute;
+  right: 48px;
+  background-color: black;
+  color: white;
+  width: max-content;
+  padding: 2px 5px;
+  border-radius: 4px;
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.copier.active:hover::before {
+  content: "code copied!";
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation: 0.5s fadeOut 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.codeview__heading {
+  font-size: 30px;
+  text-align: left;
+  width: 100%;
+}
+
+.codeview__body {
+  border-radius: 10px;
+  position: relative;
+}
